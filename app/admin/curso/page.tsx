@@ -1,3 +1,4 @@
+import Header from "/workspaces/sub/app/components/Header.tsx";
 import { sql } from "@vercel/postgres";
 import { revalidatePath } from "next/cache";
 
@@ -13,6 +14,7 @@ export default async function ListCurso() {
     const { rows } = await sql`SELECT * from estudo`;
     return (
         <div>
+            <Header />
             <h1 className="text-center text-black">Lista de Curso</h1>
 
             <table>

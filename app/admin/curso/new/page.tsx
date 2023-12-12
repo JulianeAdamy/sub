@@ -1,3 +1,4 @@
+import Header from "/workspaces/sub/app/components/Header.tsx";
 import { sql } from "@vercel/postgres";
 import { useSearchParams } from "next/navigation";
 
@@ -21,6 +22,7 @@ export default function Newcurso(){
   }
   return (
     <div>
+      <Header />
       <h1 className="text-black text-center text-4xl">Cadastrar Curso</h1>
       <form>
         <input type="text" name="name" placeholder="Nome do curso" /><br /><br />
