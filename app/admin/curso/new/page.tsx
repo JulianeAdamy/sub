@@ -1,28 +1,28 @@
-import Header from "/workspaces/sub/app/components/Header.tsx";
+
 import { sql } from "@vercel/postgres";
 import { useSearchParams } from "next/navigation";
 
 
 export const revalidate = 0
 
-export default function Newcurso(){ 
+export default function Newuniversity(){ 
   
 
 
-  async function savecurso(formData: FormData){
+  async function saveuniversity(formData: FormData){
     "use server"
     const name = formData.get("name") as string;
     const telefone = formData.get("telefone") as string;
     console.log("name, telefone")
 
-    await sql`INSERT INTO estudo (name, telefone) VALUES(${name}, ${telefone})`
+    await sql`INSERT INTO university (name, telefone) VALUES(${name}, ${telefone})`
     console.log("Acessou função")
 
 
   }
   return (
     <div>
-      <Header />
+      
       <h1 className="text-black text-center text-4xl">Cadastrar Curso</h1>
       <form>
         <input type="text" name="name" placeholder="Nome do curso" /><br /><br />
